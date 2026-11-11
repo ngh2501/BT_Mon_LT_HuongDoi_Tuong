@@ -1,3 +1,5 @@
+package Module2;
+
 import java.time.LocalDate;
 
 public class HangThucPham {
@@ -7,12 +9,10 @@ public class HangThucPham {
     private LocalDate Ngaysx;
     private LocalDate Ngayhh;
 
-    // Getter
     public int getMahang() {
         return Mahang;
     }
 
-    // Getter + Setter
     public String getTenhang() {
         return Tenhang;
     }
@@ -25,7 +25,6 @@ public class HangThucPham {
         }
     }
 
-    // Getter + Setter
     public double getDongia() {
         return Dongia;
     }
@@ -38,7 +37,6 @@ public class HangThucPham {
         }
     }
 
-    // Getter + Setter
     public LocalDate getNgaysx() {
         return Ngaysx;
     }
@@ -50,7 +48,6 @@ public class HangThucPham {
             this.Ngaysx = LocalDate.now();
         }
     }
-
 
     public LocalDate getNgayhh() {
         return Ngayhh;
@@ -64,19 +61,15 @@ public class HangThucPham {
         }
     }
 
-    // Kiểm tra hết hạn
     public boolean ktrangodoc() {
         return LocalDate.now().isAfter(Ngayhh);
     }
 
-    // Constructor
     public HangThucPham(int Mahang, String Tenhang, double Dongia,
                         LocalDate Ngaysx, LocalDate Ngayhh) {
-
         if (Mahang <= 0) {
             throw new IllegalArgumentException("Ma Hang Khong Hop Le");
         }
-
         this.Mahang = Mahang;
         setTenhang(Tenhang);
         setDongia(Dongia);
@@ -84,26 +77,24 @@ public class HangThucPham {
         setNgayhh(Ngayhh);
     }
 
-    // Constructor chỉ có mã hàng
     public HangThucPham(int Mahang) {
-
         if (Mahang <= 0) {
             throw new IllegalArgumentException("Ma Hang Khong Hop Le");
         }
-
         this.Mahang = Mahang;
         this.Tenhang = "xxx";
         this.Dongia = 0;
         this.Ngaysx = LocalDate.now();
         this.Ngayhh = this.Ngaysx;
     }
-}
-@Override
-public String toString() {
-    return "Mã hàng: " + Mahang +
-            "\nTên hàng: " + Tenhang +
-            "\nĐơn giá: " + Dongia +
-            "\nNgày sản xuất: " + Ngaysx +
-            "\nNgày hết hạn: " + Ngayhh +
-            "\nĐã hết hạn: " + ktrangodoc();
+
+    @Override
+    public String toString() {
+        return "Mã hàng: " + Mahang +
+                "\nTên hàng: " + Tenhang +
+                "\nĐơn giá: " + Dongia +
+                "\nNgày sản xuất: " + Ngaysx +
+                "\nNgày hết hạn: " + Ngayhh +
+                "\nĐã hết hạn: " + ktrangodoc();
+    }
 }
