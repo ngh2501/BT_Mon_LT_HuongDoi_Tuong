@@ -55,6 +55,6 @@ public class SinhVien {
     public void xuat() {
         System.out.printf("%-10d %-25s %-10.2f %-10.2f %-10.2f%n",
                 maSinhVien, hoTen, diemLT, diemTH, getDiemTB());
-    }
+    }}
 
  
