@@ -1,6 +1,7 @@
 package on_CK_1;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public abstract class BenhNhan {
 	protected String hoTen;
@@ -55,10 +56,28 @@ public abstract class BenhNhan {
 	}
 	
 	
+	
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(maBN);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+//		if (getClass() != obj.getClass())
+//			return false;
+		BenhNhan other = (BenhNhan) obj;
+		return Objects.equals(maBN, other.maBN);
+	}
+	
 	@Override
 	public String toString() {
 		return "BenhNhan [hoTen=" + hoTen + ", soDT=" + soDT + ", maBN=" + maBN + ", ngayphatBenh=" + ngayphatBenh
-				+ ", tinhtrang=" + tinhtrang + "]";
+				+ ", tinhtrang=" + tinhtrang + getTienPhaiTra() + "]";
 	}
 	
 	

@@ -20,13 +20,9 @@ public class QLBenhNhan {
 
 	// a. Thêm bệnh nhân: khác null và không trùng mã
 	public boolean themBenhNhan(BenhNhan benhNhan) {
-		if (benhNhan == null)
-			return false;
-		for (BenhNhan bn : dsBN) {
-			if (bn.getMaBN().equalsIgnoreCase(benhNhan.getMaBN()))
-				return false;
-		}
-		return dsBN.add(benhNhan);
+	    if (benhNhan == null || dsBN.contains(benhNhan))
+	        return false;
+	    return dsBN.add(benhNhan);
 	}
 
 	// b. Lọc BN nội trú có số ngày nằm viện trong [a, b], sắp giảm dần theo ngày phát bệnh

@@ -46,6 +46,6 @@ public class Main {
 
 		// d. Xóa bệnh nhân hết bệnh
 		System.out.println(ql.xoaBenhNhanHetBenh());
-		System.out.println(ql.getDsBN());
+		ql.getDsBN().forEach(bn -> System.out.println(bn));
 	}
 }
